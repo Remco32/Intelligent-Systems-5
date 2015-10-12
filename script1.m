@@ -6,11 +6,25 @@ hy = [-1 ;0  ;1]; % y derivative
 
 Fx = imfilter(F,hx,'replicate','conv');
 Fy = imfilter(F,hy, 'replicate', 'conv');
+
 h2 = [0,1,0;1,1,1;0,1,0]; %Dilation
 F3 = imdilate(F,h2); %Dilation
 
 
-figure, imshow(Fx)
-figure, imshow(Fy)
+subplot(2,4,1), imshow(image);
+xlabel('input')
+
+subplot(2,4,2), imshow(Fx);
+xlabel('x derivative')
+
+subplot(2,4,3), imshow(Fy);
+xlabel('y derivative')
+
+subplot(2,4,4), imshow(F3);
+xlabel('dilation')
+
+subplot(2,4,5), imshow(imnoise(I,'poisson'));
+xlabel('input w/ poisson noise')
+
 
 end
