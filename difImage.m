@@ -1,4 +1,4 @@
-function [Fx, Fy] = script1(image)
+function [Fx, Fy] = difImage(image)
 I = imread(image);
 F = im2double(I);
 hx = [-1, 0, 1]; % x derivative
