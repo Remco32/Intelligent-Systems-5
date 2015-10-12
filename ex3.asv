@@ -35,36 +35,30 @@ subplot(2,4,8), imshow(BW);
 xlabel('canny [0.5, 0.8] sigma = 7')
 
 figure(2);
-I = imnoise(F,'salt & pepper');
-subplot(2,4,1), imshow(I);
-xlabel('salt & pepper')
 
-BW = edge(I, 'canny');
-subplot(2,4,5), imshow(BW);
+BW = edge(imnoise(F,'salt & pepper'), 'canny');
+subplot(2,5,1), imshow(BW);
 xlabel('canny salt & pepper')
 
-I = imnoise(F, 'poisson');
-subplot(2,4,2), imshow(I);
-xlabel('poisson')
-
-BW = edge(I, 'canny');
-subplot(2,4,6), imshow(BW);
+BW = edge(imnoise(F, 'poisson'), 'canny');
+subplot(2,5,2), imshow(BW);
 xlabel('canny poisson')
 
-I = imnoise(F, 'gaussian');
-subplot(2,4,3), imshow(I);
-xlabel('gaussian')
-
-BW = edge(I, 'canny');
-subplot(2,4,7), imshow(BW);
+BW = edge(imnoise(F, 'gaussian'), 'canny');
+subplot(2,5,3), imshow(BW);
 xlabel('canny gaussian')
 
+I = imnoise(F, 'localvar');
+BW = edge(I, 'canny');
+subplot(2,5,4), imshow(BW);
+xlabel('canny localvar')
+
 I = imnoise(F, 'speckle');
-subplot(2,4,4), imshow(I);
+subplot(2,5,5), imshow(I);
 xlabel('speckle')
 
 
 BW = edge(I, 'canny');
-subplot(2,4,8), imshow(BW);
+subplot(2,5,5), imshow(BW);
 xlabel('canny speckle')
 
