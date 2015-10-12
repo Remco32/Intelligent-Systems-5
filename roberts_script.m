@@ -1,8 +1,8 @@
-function [Fx, Fy] = (image)
+function [Fx, Fy] = roberts_script(image)
 I = imread(image);
 F = im2double(I);
-hx = [-1,-1,-1;0,0,0;1,1,1]; % x derivative
-hy = [-1,0,1 ;-1,0,1 ;-1,0,1]; % y derivative
+hx = [0,1;-1,0]; % x derivative
+hy = [1,0;0,-1]; % y derivative
 
 Fx = imfilter(F,hx,'replicate','conv');
 Fy = imfilter(F,hy, 'replicate', 'conv');

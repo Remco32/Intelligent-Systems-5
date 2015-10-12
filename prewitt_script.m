@@ -1,4 +1,4 @@
-function [Fx, Fy] = script1_2(image)
+function [Fx, Fy] = prewitt_script(image)
 I = imread(image);
 F = im2double(I);
 hx = [-1,-1,-1;0,0,0;1,1,1]; % x derivative
