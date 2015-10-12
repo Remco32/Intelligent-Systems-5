@@ -1,4 +1,4 @@
-function [ Fx, Fy ] = prewittImage( image )
+function [ Fx, Fy ] = prewittImage(image)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 I = imread(image);
